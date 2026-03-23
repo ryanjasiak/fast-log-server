@@ -1,0 +1,16 @@
+[workspace]
+authors = ["Ryan Jasiak <rjasiak54@gmail.com>"]
+channels = ["conda-forge"]
+name = "fast-log-server"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+py_stream = "python3 -m python.stream.stream_data"
+
+[dependencies]
+python = ">=3.12"
+websockets = ">=16.0,<17"
+
+[activation]
+scripts = ["dev/set_envs.sh"]
