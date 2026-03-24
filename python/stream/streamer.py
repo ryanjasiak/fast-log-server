@@ -6,7 +6,6 @@ from .sink import DataSink
 
 class BinanceStreamer:
     def __init__(self, symbol):
-        # 1. Switch to aggTrade (usually more reliable/consistent)
         self.symbol = symbol.lower()
         self.url = f"wss://stream.binance.us:9443/ws/{self.symbol}@aggTrade"
         self.sinks = []
@@ -74,5 +73,4 @@ class PythStreamer:
             print("Streaming from Pyth Network...")
 
             async for message in ws:
-                # Pyth sends binary/json updates constantly
                 await asyncio.gather(*(sink.send(message) for sink in self.sinks))
