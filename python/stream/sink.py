@@ -14,6 +14,7 @@ class UDSSink(DataSink):
         self.writer = None
 
     async def send(self, data: str):
+        print(f'sending data: {type(data)}, {len(data)}')
         try:
             if not self.writer:
                 _, self.writer = await asyncio.open_unix_connection(self.path)

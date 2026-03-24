@@ -6,7 +6,12 @@ platforms = ["linux-64"]
 version = "0.1.0"
 
 [tasks]
-py_stream = "python3 -m python.stream.stream_data"
+# C++ Server tasks
+cmake = "cmake -B build"
+build = "cmake --build build"
+serve = "./bin/server"
+# Python tasks
+pystream = "python3 -m python.stream.stream_data"
 
 [dependencies]
 python = ">=3.12"

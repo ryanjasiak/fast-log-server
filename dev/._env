@@ -1,1 +1,1 @@
-ENV_123=<value>
+UDS_SOCKET="/tmp/fast-log-server/uds-socket"
